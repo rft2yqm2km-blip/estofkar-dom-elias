@@ -132,13 +132,18 @@ a { color: var(--blue); text-decoration: none; }
   -webkit-mask-image: radial-gradient(circle at 70% 30%, #000 30%, transparent 75%);
           mask-image: radial-gradient(circle at 70% 30%, #000 30%, transparent 75%);
 }
-.hero-inner { position: relative; display: grid; gap: 40px; align-items: center; }
+/* minmax(0,1fr) garante que a coluna nunca fica mais larga que o ecrã */
+.hero-inner { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); gap: 40px; align-items: center; }
 
 .hero-eyebrow { color: var(--yellow); font-weight: 600; letter-spacing: .5px; text-transform: uppercase; font-size: .82rem; margin-bottom: 14px; }
 .hero h1 { color: #fff; font-size: clamp(2.1rem, 6vw, 3.4rem); font-weight: 800; }
 .hero h1 .accent { color: var(--yellow); }
 .hero-sub { color: rgba(255,255,255,.82); font-size: clamp(1.02rem, 2.4vw, 1.18rem); margin: 18px 0 30px; max-width: 32em; }
+/* min-width:0 impede que os itens da grelha forcem uma coluna maior que o ecrã */
+.hero-copy, .hero-visual { min-width: 0; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+/* o botão de CTA pode quebrar linha em ecrãs estreitos, em vez de alargar a página */
+.hero-actions .btn { max-width: 100%; white-space: normal; text-align: center; }
 
 .hero-visual { position: relative; }
 .hero-visual img {
@@ -404,7 +409,7 @@ a.contact-card:hover { background: rgba(255,255,255,.14); transform: translateY(
 }
 
 @media (min-width: 900px) {
-  .hero-inner { grid-template-columns: 1.1fr .9fr; gap: 50px; }
+  .hero-inner { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 50px; }
   .cards-grid { grid-template-columns: repeat(3, 1fr); }
   .why-grid { grid-template-columns: repeat(4, 1fr); }
   .contact-grid { grid-template-columns: repeat(4, 1fr); }
