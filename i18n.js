@@ -10,7 +10,7 @@
     pt: {
       // -- Navegação / barra --
       "nav.servicos": "Serviços", "nav.trabalhos": "Trabalhos", "nav.orcamento": "Orçamento",
-      "nav.contactos": "Contactos", "nav.loja": "Loja", "nav.cta": "Pedir orçamento",
+      "nav.contactos": "Contactos", "nav.loja": "Loja", "nav.cta": "Pedir orçamento", "nav.entrar": "Entrar",
       "bar.call": "Ligar", "bar.whats": "WhatsApp",
 
       // -- Hero --
@@ -103,7 +103,7 @@
 
     es: {
       "nav.servicos": "Servicios", "nav.trabalhos": "Trabajos", "nav.orcamento": "Presupuesto",
-      "nav.contactos": "Contacto", "nav.loja": "Tienda", "nav.cta": "Pedir presupuesto",
+      "nav.contactos": "Contacto", "nav.loja": "Tienda", "nav.cta": "Pedir presupuesto", "nav.entrar": "Entrar",
       "bar.call": "Llamar", "bar.whats": "WhatsApp",
 
       "hero.eyebrow": "Tapicero Profesional · Tapizados en General",
