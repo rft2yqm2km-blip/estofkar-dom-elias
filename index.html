@@ -29,8 +29,6 @@
 
   <!-- ============================================================= -->
   <!-- DADOS ESTRUTURADOS (LocalBusiness) — JSON-LD                  -->
-  <!-- ⟦PREENCHER⟧: morada (streetAddress, postalCode, cidade) e     -->
-  <!-- horário (openingHours) quando o dono os fornecer.            -->
   <!-- ============================================================= -->
   <script type="application/ld+json">
   {
@@ -44,11 +42,12 @@
     "priceRange": "€€",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "⟦PREENCHER: morada⟧",
-      "addressLocality": "⟦PREENCHER: cidade⟧",
-      "postalCode": "⟦PREENCHER: código postal⟧",
+      "streetAddress": "R. da Terra Nova 1",
+      "addressLocality": "Valença",
+      "postalCode": "4930-175",
       "addressCountry": "PT"
     },
+    "openingHours": "Mo-Fr 09:00-18:00",
     "areaServed": "PT"
   }
   </script>
@@ -211,7 +210,6 @@
         </header>
 
         <div class="ba-list">
-          <!-- ⟦PREENCHER⟧: substituir antes-1.jpg / depois-1.jpg por fotos reais -->
           <div class="ba-slider reveal" data-ba>
             <img class="ba-after" src="assets/depois-1.jpg" alt="Sofá depois do restauro" loading="lazy" />
             <div class="ba-before-wrap">
@@ -441,25 +439,21 @@
             <strong>Email</strong>
             <span>estofkar@gmail.com</span>
           </a>
-          <!-- ⟦PREENCHER⟧: morada real -->
-          <div class="contact-card">
+          <a class="contact-card" href="https://www.google.com/maps/search/?api=1&query=R.+da+Terra+Nova+1,+4930-175+Valen%C3%A7a" target="_blank" rel="noopener">
             <span class="contact-ic">📍</span>
             <strong>Morada</strong>
-            <span>⟦PREENCHER: morada / cidade⟧</span>
-          </div>
+            <span>R. da Terra Nova 1, 4930-175 Valença</span>
+          </a>
         </div>
 
-        <!-- ⟦PREENCHER⟧: horário de funcionamento -->
         <p class="contact-hours reveal">
-          <strong>Horário:</strong> ⟦PREENCHER: ex. Seg–Sex 9h–18h · Sáb 9h–13h⟧
+          <strong>Horário:</strong> Seg–Sex 09:00–18:00 · Sáb e Dom encerrado
         </p>
 
-        <!-- ⟦PREENCHER⟧ (opcional): mapa incorporado.
-             Cole aqui o <iframe> do Google Maps quando tiver a morada:
+        <!-- Mapa incorporado (morada real). Para trocar a localização, basta alterar o "q=" do URL. -->
         <div class="map reveal">
-          <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="320" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa Estofkar Dom Elias"></iframe>
+          <iframe src="https://www.google.com/maps?q=R.+da+Terra+Nova+1,+4930-175+Valen%C3%A7a&output=embed" width="100%" height="320" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa Estofkar Dom Elias — R. da Terra Nova 1, Valença"></iframe>
         </div>
-        -->
       </div>
     </section>
   </main>
@@ -480,9 +474,7 @@
       </div>
       <div class="footer-col">
         <h4>Redes sociais</h4>
-        <!-- ⟦PREENCHER⟧: links reais de Instagram / Facebook (ou remover se não existirem) -->
-        <a href="#" aria-label="Instagram">Instagram ⟦PREENCHER⟧</a>
-        <a href="#" aria-label="Facebook">Facebook ⟦PREENCHER⟧</a>
+        <a href="https://www.facebook.com/estofkar" target="_blank" rel="noopener" aria-label="Facebook da Estofkar Dom Elias">Facebook</a>
       </div>
     </div>
     <div class="footer-bottom">
