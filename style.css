@@ -480,6 +480,9 @@ body { padding-bottom: 58px; }
 .admin-actions { display: flex; gap: 8px; flex: none; }
 .admin-del { background: #c0392b; color: #fff; }
 .admin-del:hover { background: #a93226; }
+/* Botão Sair — azul-marinho cheio, sempre visível no fundo claro do admin */
+.btn-logout { background: var(--navy); color: #fff; border-color: var(--navy); }
+.btn-logout:hover { background: var(--navy-deep); }
 
 /* ===============================================================
    LIGHTBOX
