@@ -376,6 +376,28 @@ a.contact-card:hover { background: rgba(255,255,255,.14); transform: translateY(
 }
 
 /* ===============================================================
+   BARRA FIXA DE CONTACTO (Ligar + WhatsApp) — sempre visível
+   =============================================================== */
+.action-bar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 95;
+  display: flex;
+  box-shadow: 0 -6px 20px rgba(11, 59, 92, .16);
+  padding-bottom: env(safe-area-inset-bottom, 0px); /* iPhone com barra inferior */
+}
+.action-bar__btn {
+  flex: 1; display: flex; align-items: center; justify-content: center; gap: .5em;
+  padding: 15px 10px; font-family: var(--font-head); font-weight: 600; font-size: 1.05rem;
+  color: #fff; transition: background .2s var(--ease);
+}
+.action-bar__call { background: var(--navy); }
+.action-bar__call:hover { background: var(--navy-deep); }
+.action-bar__wa { background: #25D366; }
+.action-bar__wa:hover { background: #1da851; }
+
+/* Espaço no fundo para a barra nunca tapar o rodapé/conteúdo */
+body { padding-bottom: 58px; }
+
+/* ===============================================================
    LIGHTBOX
    =============================================================== */
 .lightbox {
