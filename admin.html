@@ -87,10 +87,14 @@
               <span data-i18n="admin.fDesc">Descrição (opcional)</span>
               <textarea id="f-desc" rows="2" data-i18n-ph="admin.fDescPh"></textarea>
             </label>
-            <label class="field">
+            <div class="field">
               <span data-i18n="admin.fPhoto">Foto</span>
-              <input type="file" id="f-photo" accept="image/*" />
-            </label>
+              <label class="file-pick">
+                <input type="file" id="f-photo" accept="image/*" />
+                <span class="file-pick__btn" data-i18n="admin.choosePhoto">📷 Escolher foto</span>
+                <span class="file-pick__name" id="f-photo-name" data-i18n="admin.noFile">Nenhuma foto selecionada</span>
+              </label>
+            </div>
             <p id="admin-msg" class="admin-msg"></p>
             <button type="submit" class="btn btn-primary btn-lg" style="width:100%" data-i18n="admin.save">Guardar produto</button>
           </form>

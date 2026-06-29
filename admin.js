@@ -80,6 +80,13 @@
     listEl.querySelectorAll("[data-del]").forEach((b) => b.addEventListener("click", () => removeProduct(b.dataset.del, b.dataset.path)));
   }
 
+  // -- Mostrar o nome da foto escolhida --------------------------------
+  const photoName = $("f-photo-name");
+  $("f-photo").addEventListener("change", () => {
+    const f = $("f-photo").files[0];
+    photoName.textContent = f ? f.name : I18N.t("admin.noFile");
+  });
+
   // -- Adicionar -------------------------------------------------------
   addForm.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -109,6 +116,7 @@
       const ins = await sb.from("products").insert([{ title, category, price, quantity, description, image_url, image_path, sold: false }]);
       if (ins.error) throw ins.error;
       addForm.reset();
+      photoName.textContent = I18N.t("admin.noFile");
       msg(I18N.t("admin.saved"), true);
       loadProducts();
     } catch (err) {

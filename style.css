@@ -459,7 +459,16 @@ body { padding-bottom: 58px; }
 }
 .field textarea:focus, .field select:focus { outline: none; border-color: var(--blue); }
 .field select { width: 100%; font-family: var(--font-body); font-size: 1rem; padding: .85em 1em; border: 2px solid var(--line); border-radius: var(--radius-sm); color: var(--ink); background: #fff; }
-.field input[type="file"] { padding: .6em; background: var(--off); }
+/* Seletor de ficheiro personalizado (o nativo transborda no iOS) */
+.file-pick { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 12px; cursor: pointer; max-width: 100%; }
+.file-pick input[type="file"] { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); border: 0; }
+.file-pick__btn {
+  display: inline-flex; align-items: center; gap: 6px; flex: none;
+  background: var(--off); border: 2px solid var(--line); border-radius: var(--radius-sm);
+  padding: .7em 1.1em; font-family: var(--font-head); font-weight: 600; color: var(--ink); white-space: nowrap;
+}
+.file-pick:hover .file-pick__btn { border-color: var(--blue); color: var(--blue); }
+.file-pick__name { font-size: .9rem; color: var(--body); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .field-row { display: grid; grid-template-columns: 1fr; gap: 0 14px; }
 @media (min-width: 520px) { .field-row { grid-template-columns: 1.4fr 1fr 1fr; } }
 
@@ -469,7 +478,7 @@ body { padding-bottom: 58px; }
 .admin-config { color: var(--body); line-height: 1.6; }
 .admin-empty { color: var(--body); }
 
-.admin-row { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.admin-row { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
 .admin-row:last-child { border-bottom: 0; }
 .admin-row.is-sold { opacity: .55; }
 .admin-thumb { width: 56px; height: 56px; flex: none; border-radius: 10px; overflow: hidden; background: var(--off); }
@@ -478,6 +487,11 @@ body { padding-bottom: 58px; }
 .admin-info strong { color: var(--ink); }
 .admin-info span { font-size: .85rem; color: var(--body); }
 .admin-actions { display: flex; gap: 8px; flex: none; }
+/* Em telemóvel, os botões da lista passam para uma linha inteira por baixo */
+@media (max-width: 560px) {
+  .admin-actions { flex: 1 0 100%; margin-top: 4px; }
+  .admin-actions .btn { flex: 1; }
+}
 .admin-del { background: #c0392b; color: #fff; }
 .admin-del:hover { background: #a93226; }
 /* Botão Sair — azul-marinho cheio, sempre visível no fundo claro do admin */
