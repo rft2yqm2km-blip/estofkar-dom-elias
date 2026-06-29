@@ -485,6 +485,21 @@ body { padding-bottom: 58px; }
 .btn-logout:hover { background: var(--navy-deep); }
 
 /* ===============================================================
+   FOLGA EM TELEMÓVEIS ESTREITOS (evita "zoom"/conteúdo no limite)
+   =============================================================== */
+html, body { overflow-x: hidden; }   /* rede de segurança contra transbordo lateral */
+@media (max-width: 480px) {
+  .header-right { gap: 8px; }
+  .header-actions { gap: 8px; }
+  .back-link { display: none; }                 /* o logótipo já leva ao início */
+  .admin-tag { display: none; }                 /* redundante no telemóvel */
+  .brand-text { font-size: 1.02rem; }
+  .lang-switch button { padding: .35em .55em; font-size: .8rem; }
+  /* Páginas loja/admin: menos espaço no topo e títulos mais contidos */
+  .admin-main { padding-top: calc(var(--header-h) + 16px); }
+}
+
+/* ===============================================================
    LIGHTBOX
    =============================================================== */
 .lightbox {

@@ -80,7 +80,7 @@
       // -- Loja (pública) --
       "loja.kicker": "À venda", "loja.title": "Loja", "loja.lead": "Materiais e peças disponíveis. Veja e fale connosco pelo WhatsApp.",
       "loja.filterAll": "Todos", "loja.empty": "Sem produtos disponíveis de momento. Volte em breve!",
-      "loja.interested": "Estou interessado", "loja.qty": "Quantidade", "loja.backToSite": "← Voltar ao site",
+      "loja.interested": "Estou interessado", "loja.qty": "Quantidade", "loja.backToSite": "← Voltar",
       "loja.loading": "A carregar produtos…",
       "loja.config": "A loja está a ser configurada. Volte em breve.",
       "loja.msg": "Olá Estofkar Dom Elias! Tenho interesse neste produto: {title} — {price}. Ainda está disponível?",
@@ -164,7 +164,7 @@
 
       "loja.kicker": "A la venta", "loja.title": "Tienda", "loja.lead": "Materiales y piezas disponibles. Véalos y hable con nosotros por WhatsApp.",
       "loja.filterAll": "Todos", "loja.empty": "No hay productos disponibles por ahora. ¡Vuelva pronto!",
-      "loja.interested": "Estoy interesado", "loja.qty": "Cantidad", "loja.backToSite": "← Volver al sitio",
+      "loja.interested": "Estoy interesado", "loja.qty": "Cantidad", "loja.backToSite": "← Volver",
       "loja.loading": "Cargando productos…",
       "loja.config": "La tienda se está configurando. Vuelva pronto.",
       "loja.msg": "¡Hola Estofkar Dom Elias! Estoy interesado en este producto: {title} — {price}. ¿Sigue disponible?",
