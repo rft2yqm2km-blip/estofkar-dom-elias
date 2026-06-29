@@ -11,20 +11,15 @@
   <meta name="description" content="Estofos à medida com mãos de mestre: automóveis, sofás, cadeiras e motas. Pele, napa e tecido. Acabamento capitonné. Peça o seu orçamento por WhatsApp." />
   <meta name="theme-color" content="#0B3B5C" />
 
-  <!-- Open Graph (redes sociais) — TROCAR a imagem por uma foto real do trabalho -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Estofkar Dom Elias — Estofos à medida, feitos com mãos de mestre" />
   <meta property="og:description" content="Qualidade em serviços de estofados para mais conforto e estilo: automóveis, sofás, cadeiras e motas." />
   <meta property="og:image" content="assets/hero.jpg" />
   <meta property="og:locale" content="pt_PT" />
 
-  <!-- ============================================================= -->
-  <!-- GOOGLE FONTS                                                  -->
-  <!-- ============================================================= -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-
   <link rel="stylesheet" href="style.css" />
 
   <!-- ============================================================= -->
@@ -55,10 +50,7 @@
 
 <body>
 
-  <!-- ============================================================= -->
-  <!-- PADRÃO CAPITONNÉ (losango) — assinatura visual reutilizável   -->
-  <!-- SVG escondido; referenciado via CSS background onde precisar. -->
-  <!-- ============================================================= -->
+  <!-- PADRÃO CAPITONNÉ (losango) — assinatura visual reutilizável -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
     <defs>
       <pattern id="capitonne" width="60" height="60" patternUnits="userSpaceOnUse" patternTransform="rotate(0)">
@@ -75,7 +67,6 @@
     <div class="container header-inner">
       <a href="#topo" class="brand" aria-label="Estofkar Dom Elias — início">
         <span class="brand-mark" aria-hidden="true">
-          <!-- Pequeno losango capitonné como logótipo -->
           <svg viewBox="0 0 24 24" width="28" height="28">
             <path d="M12 1 L23 12 L12 23 L1 12 Z" fill="none" stroke="#F5B301" stroke-width="2"/>
             <circle cx="12" cy="12" r="2" fill="#F5B301"/>
@@ -87,62 +78,64 @@
       </a>
 
       <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
-        <a href="#servicos">Serviços</a>
-        <a href="#trabalhos">Trabalhos</a>
-        <a href="#orcamento">Orçamento</a>
-        <a href="#contactos">Contactos</a>
-        <a href="#orcamento" class="btn btn-primary btn-sm nav-cta">Pedir orçamento</a>
+        <a href="#servicos" data-i18n="nav.servicos">Serviços</a>
+        <a href="#trabalhos" data-i18n="nav.trabalhos">Trabalhos</a>
+        <a href="#orcamento" data-i18n="nav.orcamento">Orçamento</a>
+        <a href="loja.html" data-i18n="nav.loja">Loja</a>
+        <a href="#contactos" data-i18n="nav.contactos">Contactos</a>
+        <a href="#orcamento" class="btn btn-primary btn-sm nav-cta" data-i18n="nav.cta">Pedir orçamento</a>
       </nav>
 
-      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="header-actions">
+        <div class="lang-switch" role="group" aria-label="Idioma / Idioma">
+          <button data-lang="pt">PT</button>
+          <button data-lang="es">ES</button>
+        </div>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
   <main>
 
-    <!-- =========================================================== -->
-    <!-- HERO                                                        -->
-    <!-- =========================================================== -->
+    <!-- HERO -->
     <section class="hero" id="hero">
       <div class="hero-pattern" aria-hidden="true"></div>
       <div class="container hero-inner">
         <div class="hero-copy reveal">
-          <p class="hero-eyebrow">Estofador Profissional · Estofados em Geral</p>
-          <h1>Estofos à medida,<br><span class="accent">feitos com mãos de mestre.</span></h1>
-          <p class="hero-sub">
+          <p class="hero-eyebrow" data-i18n="hero.eyebrow">Estofador Profissional · Estofados em Geral</p>
+          <h1><span data-i18n="hero.title1">Estofos à medida,</span><br><span class="accent" data-i18n="hero.title2">feitos com mãos de mestre.</span></h1>
+          <p class="hero-sub" data-i18n="hero.sub">
             Qualidade em serviços de estofados para mais conforto e estilo na sua vida —
             automóveis, sofás, cadeiras e motas.
           </p>
           <div class="hero-actions">
-            <!-- WhatsApp primário. Número sem + e sem espaços. -->
             <a class="btn btn-primary btn-lg"
                href="https://wa.me/351932236739?text=Ol%C3%A1%20Estofkar%20Dom%20Elias!%20Gostaria%20de%20um%20or%C3%A7amento."
                target="_blank" rel="noopener">
               <svg class="ic" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M.06 24l1.69-6.16a11.87 11.87 0 01-1.6-5.95C.16 5.34 5.5 0 12.06 0a11.82 11.82 0 018.4 3.49 11.74 11.74 0 013.48 8.4c0 6.55-5.34 11.89-11.9 11.89a11.9 11.9 0 01-5.68-1.45L.06 24zm6.6-3.8c1.68.99 3.28 1.59 5.4 1.59 5.45 0 9.89-4.43 9.89-9.88 0-5.46-4.44-9.9-9.89-9.9-5.46 0-9.9 4.44-9.9 9.9 0 2.23.65 3.9 1.74 5.64l-.99 3.61 3.75-.96zm11.39-5.55c-.07-.12-.27-.2-.57-.35-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.88 1.21 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.08 1.76-.72 2-1.41.25-.69.25-1.28.17-1.41z"/></svg>
-              Pedir orçamento por WhatsApp
+              <span data-i18n="hero.ctaWhats">Pedir orçamento por WhatsApp</span>
             </a>
-            <a class="btn btn-ghost btn-lg" href="#trabalhos">Ver trabalhos</a>
+            <a class="btn btn-ghost btn-lg" href="#trabalhos" data-i18n="hero.ctaWorks">Ver trabalhos</a>
           </div>
         </div>
 
         <div class="hero-visual reveal">
           <img src="assets/hero.jpg" alt="Banco desportivo / de competição estofado em tecido pela Estofkar Dom Elias" loading="eager" width="560" height="640" />
-          <span class="hero-badge">Trabalho 100% à medida</span>
+          <span class="hero-badge" data-i18n="hero.badge">Trabalho 100% à medida</span>
         </div>
       </div>
     </section>
 
-    <!-- =========================================================== -->
-    <!-- SERVIÇOS                                                    -->
-    <!-- =========================================================== -->
+    <!-- SERVIÇOS -->
     <section class="section" id="servicos">
       <div class="container">
         <header class="section-head reveal">
-          <p class="kicker">O que fazemos</p>
-          <h2>Serviços de estofagem</h2>
-          <p class="section-lead">Do banco de um clássico ao seu sofá favorito — devolvemos conforto, estilo e durabilidade.</p>
+          <p class="kicker" data-i18n="serv.kicker">O que fazemos</p>
+          <h2 data-i18n="serv.title">Serviços de estofagem</h2>
+          <p class="section-lead" data-i18n="serv.lead">Do banco de um clássico ao seu sofá favorito — devolvemos conforto, estilo e durabilidade.</p>
         </header>
 
         <div class="cards-grid">
@@ -150,108 +143,104 @@
             <span class="card-ic" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M5 11l1.5-4.5A2 2 0 018.4 5h7.2a2 2 0 011.9 1.5L19 11m-14 0h14m-14 0a2 2 0 00-2 2v4h2m12-6a2 2 0 012 2v4h-2M6 17h12M7 17v2H5v-2m14 0v2h-2v-2"/></svg>
             </span>
-            <h3>Automóvel</h3>
-            <p>Bancos, painéis de porta e interiores completos, repostos com rigor de origem ou à sua medida.</p>
+            <h3 data-i18n="serv.auto.t">Automóvel</h3>
+            <p data-i18n="serv.auto.d">Bancos, painéis de porta e interiores completos, repostos com rigor de origem ou à sua medida.</p>
           </article>
 
           <article class="card reveal">
             <span class="card-ic" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M4 11V8a2 2 0 012-2h12a2 2 0 012 2v3a3 3 0 00-3 3v2H7v-2a3 3 0 00-3-3zm-1 0a2 2 0 012 2v5h2v-2h12v2h2v-5a2 2 0 012-2"/></svg>
             </span>
-            <h3>Sofás &amp; Mobiliário</h3>
-            <p>Reestofagem de sofás e mobiliário de sala com enchimentos novos e tecidos à sua escolha.</p>
+            <h3 data-i18n="serv.sofa.t">Sofás &amp; Mobiliário</h3>
+            <p data-i18n="serv.sofa.d">Reestofagem de sofás e mobiliário de sala com enchimentos novos e tecidos à sua escolha.</p>
           </article>
 
           <article class="card reveal">
             <span class="card-ic" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M7 3v8h10V3h2v18h-2v-8H7v8H5V3z"/></svg>
             </span>
-            <h3>Cadeiras &amp; Clássicos</h3>
-            <p>Restauro de mobiliário clássico, preservando o caráter da peça com acabamentos impecáveis.</p>
+            <h3 data-i18n="serv.cad.t">Cadeiras &amp; Clássicos</h3>
+            <p data-i18n="serv.cad.d">Restauro de mobiliário clássico, preservando o caráter da peça com acabamentos impecáveis.</p>
           </article>
 
           <article class="card reveal">
             <span class="card-ic" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M5 17a3 3 0 100-6 3 3 0 000 6zm14 0a3 3 0 100-6 3 3 0 000 6zM5 13l3-5h6l2 3h3M8 8l1-3h3"/></svg>
             </span>
-            <h3>Motas &amp; Scooters</h3>
-            <p>Assentos de mota e scooter reestofados para mais conforto, aderência e um visual renovado.</p>
+            <h3 data-i18n="serv.mota.t">Motas &amp; Scooters</h3>
+            <p data-i18n="serv.mota.d">Assentos de mota e scooter reestofados para mais conforto, aderência e um visual renovado.</p>
           </article>
 
           <article class="card reveal">
             <span class="card-ic" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L4.2 7.7l5.4-.8z"/></svg>
             </span>
-            <h3>Bancos de Competição</h3>
-            <p>Bancos desportivos e de competição com acabamentos resistentes e detalhes personalizados.</p>
+            <h3 data-i18n="serv.comp.t">Bancos de Competição</h3>
+            <p data-i18n="serv.comp.d">Bancos desportivos e de competição com acabamentos resistentes e detalhes personalizados.</p>
           </article>
 
           <article class="card reveal">
             <span class="card-ic" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M12 2l1.8 4.6L18 7l-3 3.4.8 4.6L12 13l-3.8 2 .8-4.6L6 7l4.2-.4zM5 20h14v2H5z"/></svg>
             </span>
-            <h3>Personalizado</h3>
-            <p>Trabalhos à medida em pele, napa e tecido — diga-nos a ideia e tornamo-la realidade.</p>
+            <h3 data-i18n="serv.pers.t">Personalizado</h3>
+            <p data-i18n="serv.pers.d">Trabalhos à medida em pele, napa e tecido — diga-nos a ideia e tornamo-la realidade.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- =========================================================== -->
-    <!-- ANTES & DEPOIS (slider comparativo)                         -->
-    <!-- =========================================================== -->
+    <!-- ANTES & DEPOIS -->
     <section class="section section-dark" id="antes-depois">
       <div class="section-pattern" aria-hidden="true"></div>
       <div class="container">
         <header class="section-head reveal">
-          <p class="kicker kicker-light">Restauro</p>
-          <h2>Antes &amp; Depois</h2>
-          <p class="section-lead">Arraste a barra para revelar a transformação.</p>
+          <p class="kicker kicker-light" data-i18n="ba.kicker">Restauro</p>
+          <h2 data-i18n="ba.title">Antes &amp; Depois</h2>
+          <p class="section-lead" data-i18n="ba.lead">Arraste a barra para revelar a transformação.</p>
         </header>
 
         <div class="ba-list">
           <div class="ba-slider reveal" data-ba>
-            <img class="ba-after" src="assets/depois-1.jpg" alt="Sofá depois do restauro" loading="lazy" />
+            <img class="ba-after" src="assets/depois-1.jpg" alt="Assento de mota depois do restauro" loading="lazy" />
             <div class="ba-before-wrap">
-              <img class="ba-before" src="assets/antes-1.jpg" alt="Sofá antes do restauro" loading="lazy" />
+              <img class="ba-before" src="assets/antes-1.jpg" alt="Assento de mota antes do restauro" loading="lazy" />
             </div>
             <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois" />
             <span class="ba-handle" aria-hidden="true"></span>
-            <span class="ba-tag ba-tag-before">Antes</span>
-            <span class="ba-tag ba-tag-after">Depois</span>
+            <span class="ba-tag ba-tag-before" data-i18n="ba.before">Antes</span>
+            <span class="ba-tag ba-tag-after" data-i18n="ba.after">Depois</span>
           </div>
 
           <div class="ba-slider reveal" data-ba>
-            <img class="ba-after" src="assets/depois-2.jpg" alt="Banco de automóvel depois do restauro" loading="lazy" />
+            <img class="ba-after" src="assets/depois-2.jpg" alt="Assento de mota depois do restauro" loading="lazy" />
             <div class="ba-before-wrap">
-              <img class="ba-before" src="assets/antes-2.jpg" alt="Banco de automóvel antes do restauro" loading="lazy" />
+              <img class="ba-before" src="assets/antes-2.jpg" alt="Assento de mota antes do restauro" loading="lazy" />
             </div>
             <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois" />
             <span class="ba-handle" aria-hidden="true"></span>
-            <span class="ba-tag ba-tag-before">Antes</span>
-            <span class="ba-tag ba-tag-after">Depois</span>
+            <span class="ba-tag ba-tag-before" data-i18n="ba.before">Antes</span>
+            <span class="ba-tag ba-tag-after" data-i18n="ba.after">Depois</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- =========================================================== -->
-    <!-- TRABALHOS / PORTEFÓLIO (galeria filtrável + lightbox)       -->
-    <!-- =========================================================== -->
+    <!-- TRABALHOS / PORTEFÓLIO -->
     <section class="section" id="trabalhos">
       <div class="container">
         <header class="section-head reveal">
-          <p class="kicker">Portefólio</p>
-          <h2>Trabalhos</h2>
-          <p class="section-lead">Uma amostra do que fazemos. Clique para ver em grande.</p>
+          <p class="kicker" data-i18n="work.kicker">Portefólio</p>
+          <h2 data-i18n="work.title">Trabalhos</h2>
+          <p class="section-lead" data-i18n="work.lead">Uma amostra do que fazemos. Clique para ver em grande.</p>
         </header>
 
         <div class="filters reveal" role="tablist" aria-label="Filtrar trabalhos">
-          <button class="filter is-active" data-filter="todos">Todos</button>
-          <button class="filter" data-filter="automovel">Automóvel</button>
-          <button class="filter" data-filter="mobiliario">Mobiliário</button>
-          <button class="filter" data-filter="classicos">Clássicos</button>
-          <button class="filter" data-filter="motas">Motas</button>
+          <button class="filter is-active" data-filter="todos" data-i18n="filter.todos">Todos</button>
+          <button class="filter" data-filter="automovel" data-i18n="filter.automovel">Automóvel</button>
+          <button class="filter" data-filter="mobiliario" data-i18n="filter.mobiliario">Mobiliário</button>
+          <button class="filter" data-filter="classicos" data-i18n="filter.classicos">Clássicos</button>
+          <button class="filter" data-filter="motas" data-i18n="filter.motas">Motas</button>
         </div>
 
         <!-- Para acrescentar/trocar trabalhos: copie a foto para assets/ e duplique um <figure>.
@@ -291,163 +280,156 @@
       </div>
     </section>
 
-    <!-- =========================================================== -->
-    <!-- ORÇAMENTO POR MEDIDA (construtor por passos)                -->
-    <!-- =========================================================== -->
+    <!-- ORÇAMENTO POR MEDIDA -->
     <section class="section section-soft" id="orcamento">
       <div class="container">
         <header class="section-head reveal">
-          <p class="kicker">Funcionalidade estrela</p>
-          <h2>Orçamento por medida</h2>
-          <p class="section-lead">Em 4 passos rápidos preparamos a sua mensagem. Escolhe enviar por WhatsApp ou email.</p>
+          <p class="kicker" data-i18n="quote.kicker">Funcionalidade estrela</p>
+          <h2 data-i18n="quote.title">Orçamento por medida</h2>
+          <p class="section-lead" data-i18n="quote.lead">Em 4 passos rápidos preparamos a sua mensagem. Escolhe enviar por WhatsApp ou email.</p>
         </header>
 
         <div class="quote reveal" id="quote">
-          <!-- Barra de progresso -->
           <div class="quote-progress" aria-hidden="true">
             <span class="quote-bar" id="quote-bar"></span>
           </div>
 
           <!-- PASSO 1 -->
           <div class="quote-step is-active" data-step="1">
-            <h3 class="quote-q">1. Que peça quer estofar?</h3>
+            <h3 class="quote-q" data-i18n="quote.q1">1. Que peça quer estofar?</h3>
             <div class="opts" data-group="peca">
-              <button class="opt" data-value="Automóvel">🚗 Automóvel</button>
-              <button class="opt" data-value="Sofá / Mobiliário">🛋️ Sofá / Mobiliário</button>
-              <button class="opt" data-value="Cadeira">🪑 Cadeira</button>
-              <button class="opt" data-value="Mota / Scooter">🏍️ Mota / Scooter</button>
-              <button class="opt" data-value="Outro">✨ Outro</button>
+              <button class="opt" data-key="quote.o.auto"  data-i18n="quote.o.auto">🚗 Automóvel</button>
+              <button class="opt" data-key="quote.o.sofa"  data-i18n="quote.o.sofa">🛋️ Sofá / Mobiliário</button>
+              <button class="opt" data-key="quote.o.cad"   data-i18n="quote.o.cad">🪑 Cadeira</button>
+              <button class="opt" data-key="quote.o.mota"  data-i18n="quote.o.mota">🏍️ Mota / Scooter</button>
+              <button class="opt" data-key="quote.o.outro" data-i18n="quote.o.outro">✨ Outro</button>
             </div>
           </div>
 
           <!-- PASSO 2 -->
           <div class="quote-step" data-step="2">
-            <h3 class="quote-q">2. Que material prefere?</h3>
+            <h3 class="quote-q" data-i18n="quote.q2">2. Que material prefere?</h3>
             <div class="opts" data-group="material">
-              <button class="opt" data-value="Pele natural">Pele natural</button>
-              <button class="opt" data-value="Napa (pele sintética)">Napa (pele sintética)</button>
-              <button class="opt" data-value="Tecido">Tecido</button>
-              <button class="opt" data-value="Não sei, aconselhem-me">Não sei, aconselhem-me</button>
+              <button class="opt" data-key="quote.o.pele"   data-i18n="quote.o.pele">Pele natural</button>
+              <button class="opt" data-key="quote.o.napa"   data-i18n="quote.o.napa">Napa (pele sintética)</button>
+              <button class="opt" data-key="quote.o.tecido" data-i18n="quote.o.tecido">Tecido</button>
+              <button class="opt" data-key="quote.o.naosei" data-i18n="quote.o.naosei">Não sei, aconselhem-me</button>
             </div>
           </div>
 
           <!-- PASSO 3 -->
           <div class="quote-step" data-step="3">
-            <h3 class="quote-q">3. Que acabamento?</h3>
+            <h3 class="quote-q" data-i18n="quote.q3">3. Que acabamento?</h3>
             <div class="opts" data-group="acabamento">
-              <button class="opt" data-value="Capitonné (losango)">Capitonné (losango)</button>
-              <button class="opt" data-value="Liso">Liso</button>
-              <button class="opt" data-value="Outro / Não sei">Outro / Não sei</button>
+              <button class="opt" data-key="quote.o.capit"   data-i18n="quote.o.capit">Capitonné (losango)</button>
+              <button class="opt" data-key="quote.o.liso"    data-i18n="quote.o.liso">Liso</button>
+              <button class="opt" data-key="quote.o.outroac" data-i18n="quote.o.outroac">Outro / Não sei</button>
             </div>
           </div>
 
           <!-- PASSO 4 -->
           <div class="quote-step" data-step="4">
-            <h3 class="quote-q">4. Quantidade e detalhes</h3>
+            <h3 class="quote-q" data-i18n="quote.q4">4. Quantidade e detalhes</h3>
             <label class="field">
-              <span>Descreva o trabalho</span>
-              <input type="text" id="q-detalhes" placeholder="Ex.: 2 bancos da frente de um Golf" />
+              <span data-i18n="quote.detLabel">Descreva o trabalho</span>
+              <input type="text" id="q-detalhes" data-i18n-ph="quote.detPh" placeholder="Ex.: 2 bancos da frente de um Golf" />
             </label>
             <label class="field">
-              <span>O seu nome <em>(opcional)</em></span>
-              <input type="text" id="q-nome" placeholder="Ex.: João" />
+              <span><span data-i18n="quote.nameLabel">O seu nome</span> <em data-i18n="quote.nameOpt">(opcional)</em></span>
+              <input type="text" id="q-nome" data-i18n-ph="quote.namePh" placeholder="Ex.: João" />
             </label>
           </div>
 
           <!-- RESUMO -->
           <div class="quote-step quote-summary" data-step="5">
-            <h3 class="quote-q">Resumo do seu pedido</h3>
+            <h3 class="quote-q" data-i18n="quote.summaryTitle">Resumo do seu pedido</h3>
             <ul class="summary-list" id="summary-list"></ul>
             <div class="quote-final">
               <a class="btn btn-primary btn-lg" id="send-wa" href="#" target="_blank" rel="noopener">
                 <svg class="ic" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M.06 24l1.69-6.16a11.87 11.87 0 01-1.6-5.95C.16 5.34 5.5 0 12.06 0a11.82 11.82 0 018.4 3.49 11.74 11.74 0 013.48 8.4c0 6.55-5.34 11.89-11.9 11.89a11.9 11.9 0 01-5.68-1.45L.06 24zm6.6-3.8c1.68.99 3.28 1.59 5.4 1.59 5.45 0 9.89-4.43 9.89-9.88 0-5.46-4.44-9.9-9.89-9.9-5.46 0-9.9 4.44-9.9 9.9 0 2.23.65 3.9 1.74 5.64l-.99 3.61 3.75-.96z"/></svg>
-                Enviar por WhatsApp
+                <span data-i18n="quote.sendWhats">Enviar por WhatsApp</span>
               </a>
-              <a class="btn btn-outline btn-lg" id="send-mail" href="#">Enviar por email</a>
+              <a class="btn btn-outline btn-lg" id="send-mail" href="#" data-i18n="quote.sendMail">Enviar por email</a>
             </div>
           </div>
 
           <!-- Navegação -->
           <div class="quote-nav">
-            <button class="btn btn-ghost" id="quote-back" hidden>← Voltar</button>
+            <button class="btn btn-ghost" id="quote-back" data-i18n="quote.back" hidden>← Voltar</button>
             <span class="quote-count" id="quote-count">Passo 1 de 5</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- =========================================================== -->
-    <!-- PORQUÊ A ESTOFKAR DOM ELIAS                                 -->
-    <!-- =========================================================== -->
+    <!-- PORQUÊ -->
     <section class="section" id="porque">
       <div class="container">
         <header class="section-head reveal">
-          <p class="kicker">Porquê nós</p>
-          <h2>Porquê a Estofkar Dom Elias</h2>
+          <p class="kicker" data-i18n="why.kicker">Porquê nós</p>
+          <h2 data-i18n="why.title">Porquê a Estofkar Dom Elias</h2>
         </header>
 
         <div class="why-grid">
           <div class="why reveal">
             <span class="why-ic" aria-hidden="true">📐</span>
-            <h3>100% à medida</h3>
-            <p>Cada trabalho é pensado para a sua peça e para o seu gosto, sem soluções de prateleira.</p>
+            <h3 data-i18n="why.1t">100% à medida</h3>
+            <p data-i18n="why.1d">Cada trabalho é pensado para a sua peça e para o seu gosto, sem soluções de prateleira.</p>
           </div>
           <div class="why reveal">
             <span class="why-ic" aria-hidden="true">🥇</span>
-            <h3>Materiais de qualidade</h3>
-            <p>Pele, napa e tecidos selecionados para durar e envelhecer bem.</p>
+            <h3 data-i18n="why.2t">Materiais de qualidade</h3>
+            <p data-i18n="why.2d">Pele, napa e tecidos selecionados para durar e envelhecer bem.</p>
           </div>
           <div class="why reveal">
             <span class="why-ic" aria-hidden="true">💎</span>
-            <h3>Acabamentos de mestre</h3>
-            <p>Detalhes como o capitonné executados com precisão e paciência.</p>
+            <h3 data-i18n="why.3t">Acabamentos de mestre</h3>
+            <p data-i18n="why.3d">Detalhes como o capitonné executados com precisão e paciência.</p>
           </div>
           <div class="why reveal">
             <span class="why-ic" aria-hidden="true">🔍</span>
-            <h3>Atenção ao detalhe</h3>
-            <p>Anos de experiência ao serviço de um acabamento impecável, costura a costura.</p>
+            <h3 data-i18n="why.4t">Atenção ao detalhe</h3>
+            <p data-i18n="why.4d">Anos de experiência ao serviço de um acabamento impecável, costura a costura.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- =========================================================== -->
-    <!-- CONTACTOS                                                   -->
-    <!-- =========================================================== -->
+    <!-- CONTACTOS -->
     <section class="section section-dark" id="contactos">
       <div class="section-pattern" aria-hidden="true"></div>
       <div class="container">
         <header class="section-head reveal">
-          <p class="kicker kicker-light">Falar connosco</p>
-          <h2>Contactos</h2>
-          <p class="section-lead">Solicite o seu orçamento — respondemos com gosto.</p>
+          <p class="kicker kicker-light" data-i18n="contact.kicker">Falar connosco</p>
+          <h2 data-i18n="contact.title">Contactos</h2>
+          <p class="section-lead" data-i18n="contact.lead">Solicite o seu orçamento — respondemos com gosto.</p>
         </header>
 
         <div class="contact-grid reveal">
           <a class="contact-card" href="https://wa.me/351932236739" target="_blank" rel="noopener">
             <span class="contact-ic">💬</span>
-            <strong>WhatsApp</strong>
+            <strong data-i18n="contact.whats">WhatsApp</strong>
             <span>+351 932 236 739</span>
           </a>
           <a class="contact-card" href="tel:+351932236739">
             <span class="contact-ic">📞</span>
-            <strong>Telefone</strong>
+            <strong data-i18n="contact.phone">Telefone</strong>
             <span>+351 932 236 739</span>
           </a>
           <a class="contact-card" href="mailto:estofkar@gmail.com">
             <span class="contact-ic">✉️</span>
-            <strong>Email</strong>
+            <strong data-i18n="contact.email">Email</strong>
             <span>estofkar@gmail.com</span>
           </a>
           <a class="contact-card" href="https://www.google.com/maps/search/?api=1&query=R.+da+Terra+Nova+1,+4930-175+Valen%C3%A7a" target="_blank" rel="noopener">
             <span class="contact-ic">📍</span>
-            <strong>Morada</strong>
+            <strong data-i18n="contact.address">Morada</strong>
             <span>R. da Terra Nova 1, 4930-175 Valença</span>
           </a>
         </div>
 
         <p class="contact-hours reveal">
-          <strong>Horário:</strong> Seg–Sex 09:00–18:00 · Sáb e Dom encerrado
+          <strong data-i18n="contact.hoursLabel">Horário:</strong> <span data-i18n="contact.hoursValue">Seg–Sex 09:00–18:00 · Sáb e Dom encerrado</span>
         </p>
 
         <!-- Mapa incorporado (morada real). Para trocar a localização, basta alterar o "q=" do URL. -->
@@ -458,33 +440,30 @@
     </section>
   </main>
 
-  <!-- =========================================================== -->
-  <!-- FOOTER                                                      -->
-  <!-- =========================================================== -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
         <span class="brand-text"><strong>Estofkar</strong> <span>Dom Elias</span></span>
-        <p>Estofador profissional · Estofos à medida em automóveis, sofás, cadeiras e motas.</p>
+        <p data-i18n="footer.desc">Estofador profissional · Estofos à medida em automóveis, sofás, cadeiras e motas.</p>
       </div>
       <div class="footer-col">
-        <h4>Contactos</h4>
+        <h4 data-i18n="footer.contacts">Contactos</h4>
         <a href="tel:+351932236739">+351 932 236 739</a>
         <a href="mailto:estofkar@gmail.com">estofkar@gmail.com</a>
+        <a href="loja.html" data-i18n="nav.loja">Loja</a>
       </div>
       <div class="footer-col">
-        <h4>Redes sociais</h4>
+        <h4 data-i18n="footer.social">Redes sociais</h4>
         <a href="https://www.facebook.com/estofkar" target="_blank" rel="noopener" aria-label="Facebook da Estofkar Dom Elias">Facebook</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <span id="year"></span> Estofkar Dom Elias. Todos os direitos reservados.</span>
+      <span data-i18n="footer.rights">© 2026 Estofkar Dom Elias. Todos os direitos reservados.</span>
     </div>
   </footer>
 
-  <!-- =========================================================== -->
-  <!-- BARRA FIXA DE CONTACTO (sempre visível: Ligar + WhatsApp)   -->
-  <!-- =========================================================== -->
+  <!-- BARRA FIXA DE CONTACTO (sempre visível: Ligar + WhatsApp) -->
   <div class="action-bar">
     <a class="action-bar__btn action-bar__call" href="tel:+351932236739" aria-label="Ligar para a Estofkar Dom Elias">
       <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1.1z"/></svg>
@@ -496,9 +475,7 @@
     </a>
   </div>
 
-  <!-- =========================================================== -->
-  <!-- LIGHTBOX                                                    -->
-  <!-- =========================================================== -->
+  <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Imagem ampliada">
     <button class="lb-close" id="lb-close" aria-label="Fechar">×</button>
     <button class="lb-prev" id="lb-prev" aria-label="Anterior">‹</button>
@@ -506,6 +483,8 @@
     <button class="lb-next" id="lb-next" aria-label="Seguinte">›</button>
   </div>
 
-  <script src="script.js" defer></script>
+  <script src="config.js"></script>
+  <script src="i18n.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

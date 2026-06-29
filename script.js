@@ -165,6 +165,10 @@
 
     const data = { peca: "", material: "", acabamento: "", detalhes: "", nome: "" };
 
+    // Tradução: usa o motor i18n se existir, senão devolve o próprio texto
+    const T = (k, v) => (window.I18N ? I18N.t(k, v) : k);
+    const lbl = (k) => (k ? T(k) : "—"); // k = chave i18n da opção escolhida
+
     const goTo = (n) => {
       current = Math.max(1, Math.min(total, n));
       steps.forEach((s) =>
@@ -172,19 +176,19 @@
       );
       bar.style.width = (current / total) * 100 + "%";
       backBtn.hidden = current === 1;
-      countEl.textContent = "Passo " + current + " de " + total;
+      countEl.textContent = T("quote.stepOf", { n: current, t: total });
       if (current === total) buildSummary();
     };
 
-    // Selecionar opção em passos 1–3 → guarda e avança
+    // Selecionar opção em passos 1–3 → guarda a CHAVE i18n e avança
     $$(".opts", quote).forEach((group) => {
       const key = group.dataset.group; // peca | material | acabamento
       $$(".opt", group).forEach((opt) => {
         opt.addEventListener("click", () => {
           $$(".opt", group).forEach((o) => o.classList.remove("is-selected"));
           opt.classList.add("is-selected");
-          data[key] = opt.dataset.value;
-          setTimeout(() => goTo(current + 1), 180); // pequena pausa para feedback visual
+          data[key] = opt.dataset.key; // guarda a chave (ex.: "quote.o.auto")
+          setTimeout(() => goTo(current + 1), 180);
         });
       });
     });
@@ -193,12 +197,11 @@
     const detalhesEl = $("#q-detalhes");
     const nomeEl = $("#q-nome");
 
-    // Adiciona botão "Ver resumo" ao passo 4 dinamicamente
     const step4 = $('.quote-step[data-step="4"]', quote);
     const nextBtn = document.createElement("button");
     nextBtn.className = "btn btn-primary";
     nextBtn.type = "button";
-    nextBtn.textContent = "Ver resumo →";
+    nextBtn.textContent = T("quote.seeSummary");
     nextBtn.style.marginTop = "6px";
     nextBtn.addEventListener("click", () => {
       data.detalhes = (detalhesEl.value || "").trim();
@@ -209,46 +212,48 @@
 
     backBtn.addEventListener("click", () => goTo(current - 1));
 
-    // Construir resumo + links de envio
     const summaryList = $("#summary-list");
     const waBtn = $("#send-wa");
     const mailBtn = $("#send-mail");
 
     const buildSummary = () => {
       const rows = [
-        ["Peça", data.peca || "—"],
-        ["Material", data.material || "—"],
-        ["Acabamento", data.acabamento || "—"],
-        ["Detalhes", data.detalhes || "—"],
+        [T("quote.s.peca"), lbl(data.peca)],
+        [T("quote.s.material"), lbl(data.material)],
+        [T("quote.s.acab"), lbl(data.acabamento)],
+        [T("quote.s.det"), data.detalhes || "—"],
       ];
-      if (data.nome) rows.push(["Nome", data.nome]);
+      if (data.nome) rows.push([T("quote.s.nome"), data.nome]);
 
       summaryList.innerHTML = rows
-        .map((r) => `<li><strong>${r[0]}:</strong><span>${escapeHtml(r[1])}</span></li>`)
+        .map((r) => `<li><strong>${escapeHtml(r[0])}:</strong><span>${escapeHtml(r[1])}</span></li>`)
         .join("");
 
-      // Texto da mensagem (igual para WhatsApp e email)
       const lines = [
-        "Olá Estofkar Dom Elias! Gostaria de um orçamento.",
-        "• Peça: " + (data.peca || "—"),
-        "• Material: " + (data.material || "—"),
-        "• Acabamento: " + (data.acabamento || "—"),
-        "• Detalhes: " + (data.detalhes || "—"),
+        T("quote.msgIntro"),
+        "• " + T("quote.s.peca") + ": " + lbl(data.peca),
+        "• " + T("quote.s.material") + ": " + lbl(data.material),
+        "• " + T("quote.s.acab") + ": " + lbl(data.acabamento),
+        "• " + T("quote.s.det") + ": " + (data.detalhes || "—"),
       ];
-      if (data.nome) lines.push("• Nome: " + data.nome);
+      if (data.nome) lines.push("• " + T("quote.s.nome") + ": " + data.nome);
       const message = lines.join("\n");
 
-      // WhatsApp
-      waBtn.href =
-        "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(message);
+      waBtn.href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(message);
 
-      // Email
-      const subject = "Pedido de orçamento — " + (data.peca || "Estofagem");
+      const subject = T("quote.mailSubject") + " — " + lbl(data.peca);
       mailBtn.href =
         "mailto:" + EMAIL +
         "?subject=" + encodeURIComponent(subject) +
         "&body=" + encodeURIComponent(message);
     };
+
+    // Atualizar textos dinâmicos quando muda o idioma
+    document.addEventListener("i18n:change", () => {
+      nextBtn.textContent = T("quote.seeSummary");
+      countEl.textContent = T("quote.stepOf", { n: current, t: total });
+      if (current === total) buildSummary();
+    });
 
     goTo(1);
   }

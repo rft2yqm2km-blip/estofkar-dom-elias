@@ -398,6 +398,90 @@ a.contact-card:hover { background: rgba(255,255,255,.14); transform: translateY(
 body { padding-bottom: 58px; }
 
 /* ===============================================================
+   SELETOR DE IDIOMA (PT / ES)
+   =============================================================== */
+.header-right { display: flex; align-items: center; gap: 16px; }
+.header-actions { display: flex; align-items: center; gap: 12px; }
+.back-link { color: var(--ink); font-weight: 500; font-size: .95rem; }
+.back-link:hover { color: var(--blue); }
+.lang-switch { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; background: #fff; }
+.lang-switch button {
+  border: 0; background: transparent; cursor: pointer; font-family: var(--font-head); font-weight: 600;
+  font-size: .85rem; padding: .4em .8em; color: var(--body); transition: .15s var(--ease);
+}
+.lang-switch button.is-active { background: var(--navy); color: #fff; }
+.lang-switch button:not(.is-active):hover { color: var(--blue); }
+/* No header principal (index) o seletor entra antes do menu */
+.nav-lang { margin-left: 4px; }
+
+/* ===============================================================
+   LOJA PÚBLICA
+   =============================================================== */
+.store-state { text-align: center; color: var(--body); padding: 30px 0; font-size: 1.05rem; }
+.store-grid { display: grid; grid-template-columns: 1fr; gap: 22px; }
+.prod {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
+  display: flex; flex-direction: column; transition: transform .2s var(--ease), box-shadow .25s;
+}
+.prod:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.prod-img { aspect-ratio: 4 / 3; background: var(--off); }
+.prod-img img { width: 100%; height: 100%; object-fit: cover; }
+.prod-body { padding: 18px 18px 20px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.prod-cat { color: var(--blue); font-family: var(--font-head); font-weight: 600; font-size: .78rem; text-transform: uppercase; letter-spacing: .5px; }
+.prod-title { font-size: 1.15rem; }
+.prod-desc { font-size: .92rem; color: var(--body); }
+.prod-meta { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-top: auto; padding-top: 6px; }
+.prod-price { font-family: var(--font-head); font-weight: 800; font-size: 1.4rem; color: var(--navy); }
+.prod-qty { font-size: .85rem; color: var(--body); }
+.prod-cta { margin-top: 12px; width: 100%; background: #25D366; color: #fff; box-shadow: none; }
+.prod-cta:hover { background: #1da851; }
+
+@media (min-width: 620px) { .store-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 980px) { .store-grid { grid-template-columns: repeat(3, 1fr); } }
+
+/* ===============================================================
+   ADMIN DA LOJA
+   =============================================================== */
+.admin-body { background: var(--off); }
+.admin-tag { font-family: var(--font-head); font-weight: 600; color: var(--navy); font-size: .95rem; }
+.admin-main { padding: calc(var(--header-h) + 30px) 20px 40px; max-width: 1040px; }
+.admin-card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 26px 24px; margin-bottom: 22px; }
+.login-card { max-width: 420px; margin: 40px auto; }
+.admin-card h1, .admin-card h2 { margin-bottom: 18px; }
+.admin-topbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 18px; flex-wrap: wrap; }
+.admin-topbar h1 { font-size: 1.5rem; }
+.admin-grid { display: grid; grid-template-columns: 1fr; gap: 22px; }
+@media (min-width: 860px) { .admin-grid { grid-template-columns: 1fr 1fr; align-items: start; } }
+
+.field textarea {
+  width: 100%; font-family: var(--font-body); font-size: 1rem; padding: .85em 1em;
+  border: 2px solid var(--line); border-radius: var(--radius-sm); color: var(--ink); resize: vertical;
+}
+.field textarea:focus, .field select:focus { outline: none; border-color: var(--blue); }
+.field select { width: 100%; font-family: var(--font-body); font-size: 1rem; padding: .85em 1em; border: 2px solid var(--line); border-radius: var(--radius-sm); color: var(--ink); background: #fff; }
+.field input[type="file"] { padding: .6em; background: var(--off); }
+.field-row { display: grid; grid-template-columns: 1fr; gap: 0 14px; }
+@media (min-width: 520px) { .field-row { grid-template-columns: 1.4fr 1fr 1fr; } }
+
+.admin-msg { font-size: .92rem; margin: 6px 0; min-height: 1.2em; }
+.admin-msg.is-err { color: #c0392b; }
+.admin-msg.is-ok { color: #1da851; }
+.admin-config { color: var(--body); line-height: 1.6; }
+.admin-empty { color: var(--body); }
+
+.admin-row { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.admin-row:last-child { border-bottom: 0; }
+.admin-row.is-sold { opacity: .55; }
+.admin-thumb { width: 56px; height: 56px; flex: none; border-radius: 10px; overflow: hidden; background: var(--off); }
+.admin-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.admin-info { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.admin-info strong { color: var(--ink); }
+.admin-info span { font-size: .85rem; color: var(--body); }
+.admin-actions { display: flex; gap: 8px; flex: none; }
+.admin-del { background: #c0392b; color: #fff; }
+.admin-del:hover { background: #a93226; }
+
+/* ===============================================================
    LIGHTBOX
    =============================================================== */
 .lightbox {

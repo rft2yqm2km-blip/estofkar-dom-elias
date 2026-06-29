@@ -6,11 +6,27 @@ basta abrir o `index.html` no navegador, ou alojá-lo em qualquer servidor/hosti
 ## Ficheiros
 
 ```
-index.html      → estrutura e conteúdo
+index.html      → página principal (PT/ES)
+loja.html       → loja pública (produtos à venda)
+admin.html      → gestão da loja (login do Elias)
 style.css       → estilos (paleta azul/amarelo/branco, responsivo)
 script.js       → menu, animações, slider antes/depois, galeria, orçamento
-assets/         → imagens (placeholders — SUBSTITUIR por fotos reais)
+config.js       → contactos, dados do Supabase e categorias da loja
+i18n.js         → traduções Português / Espanhol
+store.js        → loja pública (lê o Supabase)
+admin.js        → gestão de produtos (Supabase Auth + Storage)
+assets/         → fotos reais (originais em assets/_originais/)
+SUPABASE_SETUP.md → guia para ativar a loja (login + base de dados)
 ```
+
+## 🛒 Loja com login (Supabase)
+
+A loja e a gestão de produtos estão prontas mas **precisam de ser ativadas** uma vez:
+siga o guia **[SUPABASE_SETUP.md](SUPABASE_SETUP.md)** (cerca de 10 min) e preencha as
+chaves em `config.js`. Enquanto não estiver configurado, a loja mostra "a ser configurada".
+
+- **Idioma:** seletor **PT/ES** no topo de todas as páginas.
+- **Gestão:** `admin.html` — o Elias entra e adiciona/remove produtos sozinho.
 
 ## ✅ O que falta preencher (procure por `⟦PREENCHER⟧` no código)
 
