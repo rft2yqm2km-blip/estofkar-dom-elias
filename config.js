@@ -8,9 +8,9 @@ window.APP_CONFIG = {
   EMAIL: "estofkar@gmail.com",
 
   // --- SUPABASE (necessário para a loja) ------------------------------
-  // ⟦PREENCHER⟧ — copie de: Supabase → Project Settings → API
-  SUPABASE_URL: "⟦PREENCHER_SUPABASE_URL⟧",        // ex.: https://abcd1234.supabase.co
-  SUPABASE_ANON_KEY: "⟦PREENCHER_SUPABASE_ANON_KEY⟧", // a chave "anon public"
+  // Chave PUBLISHABLE (pública, segura para o site). NUNCA usar a secret key aqui.
+  SUPABASE_URL: "https://yqiollezeqvlkvpueleh.supabase.co",
+  SUPABASE_ANON_KEY: "sb_publishable_YuRmIE6jZEkqZSsMfOc5fw_MUUC5kAR",
   BUCKET: "produtos",                                  // bucket de Storage para as fotos
 
   // Categorias da loja (slug interno + etiquetas PT/ES).
